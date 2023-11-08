@@ -5,6 +5,7 @@
 #include "shapes/jolt_custom_empty_shape.hpp"
 #include "shapes/jolt_custom_ray_shape.hpp"
 #include "shapes/jolt_custom_user_data_shape.hpp"
+#include "shapes/jolt_custom_voxel_shape.hpp"
 
 #ifdef GDJ_USE_MIMALLOC
 
@@ -82,6 +83,7 @@ void jolt_initialize() {
 	JoltCustomRayShape::register_type();
 	JoltCustomUserDataShape::register_type();
 	JoltCustomDoubleSidedShape::register_type();
+	JoltCustomVoxelShape::register_type();
 
 	JoltGroupFilter::instance = new JoltGroupFilter();
 	JoltGroupFilter::instance->SetEmbedded();

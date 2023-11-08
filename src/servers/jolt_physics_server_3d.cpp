@@ -13,6 +13,7 @@
 #include "shapes/jolt_capsule_shape_impl_3d.hpp"
 #include "shapes/jolt_concave_polygon_shape_impl_3d.hpp"
 #include "shapes/jolt_convex_polygon_shape_impl_3d.hpp"
+#include "shapes/jolt_custom_user_shape_impl_3d.hpp"
 #include "shapes/jolt_cylinder_shape_impl_3d.hpp"
 #include "shapes/jolt_height_map_shape_impl_3d.hpp"
 #include "shapes/jolt_separation_ray_shape_impl_3d.hpp"
@@ -204,7 +205,10 @@ RID JoltPhysicsServer3D::_heightmap_shape_create() {
 }
 
 RID JoltPhysicsServer3D::_custom_shape_create() {
-	ERR_FAIL_D_MSG("Custom shapes are not supported by Godot Jolt.");
+	JoltCustomUserShapeImpl3D* shape = memnew(JoltCustomUserShapeImpl3D);
+	RID rid = shape_owner.make_rid(shape);
+	shape->set_rid(rid);
+	return rid;
 }
 
 void JoltPhysicsServer3D::_shape_set_data(const RID& p_shape, const Variant& p_data) {
