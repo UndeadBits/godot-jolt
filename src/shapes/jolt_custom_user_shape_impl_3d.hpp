@@ -6,6 +6,7 @@ struct VoxelShapeData {
 	int sizeX = 0;
 	int sizeY = 0;
 	int sizeZ = 0;
+	PackedByteArray voxels;
 };
 
 class JoltCustomUserShapeImpl3D final : public JoltShapeImpl3D {

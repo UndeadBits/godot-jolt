@@ -5,7 +5,6 @@ namespace JoltCustomShapeType {
 
 constexpr JPH::EShapeType EMPTY = JPH::EShapeType::User1;
 constexpr JPH::EShapeType CUSTOM = JPH::EShapeType::User3;
-constexpr JPH::EShapeType VOXEL = JPH::EShapeType::User4;
 
 } // namespace JoltCustomShapeType
 
